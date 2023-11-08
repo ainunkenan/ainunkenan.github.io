@@ -2,6 +2,10 @@
 /* General Settings */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300&display=swap");
 
+:root {
+  font-size: 62.5%;
+}
+
 *,
 html,
 body {
@@ -11,13 +15,13 @@ body {
 }
 
 html {
-  font-size: 62.5%;
   font-family: "Poppins", sans-serif;
 }
 
 body {
   height: 100vh;
   background: linear-gradient(90deg, rgb(55, 55, 55) 0%, rgb(29, 29, 33) 100%);
+  font-size: 1.6rem;
 }
 
 li {
@@ -43,7 +47,6 @@ a {
 .logo-img {
   /*mq*/
   width: 8.5rem;
-  height: 5rem;
 }
 
 .logo-img:hover {
@@ -65,7 +68,7 @@ a {
 }
 
 #welcome-section {
-  margin-top: 10em;
+  margin-top: 10rem;
   text-align: center;
   color: white;
 }
@@ -78,6 +81,7 @@ a {
 
 #welcome-section h1 {
   padding: 0.5rem;
+  font-size: 3.2rem;
 }
 
 #welcome-section span {
@@ -85,48 +89,64 @@ a {
 }
 
 #welcome-section .welc-content {
-  margin: 5em;
-  justify-content: start;
+  margin: 4em;
+}
+
+#welcome-section h1 {
+  font-size: 4em;
+}
+
+#welcome-section .welc-content h2 {
+  font-size: 2.8rem;
 }
 
 #welcome-section .welc-content .welc-desc {
   margin: 1em 0;
+  font-size: 2.1rem;
 }
 
 .section-title {
   color: white;
   text-align: center;
+  font-size: 2.7rem;
 }
 
 #projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  place-items: center;
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
   color: white;
   width: 100%;
+  margin-bottom: 2rem;
 }
 .project-tile {
-  margin: 1em;
-  width: 70%;
-  padding: 0.5em;
+  margin: 0 auto;
+  max-width: 1fr;
+  width: 75%;
+  padding: 2.5rem;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  line-height: 1.1em;
-  border: 1px solid #ffd700;
+  box-shadow: 0 0.3rem 0.5rem 0.2rem #ffd900b4;
+  border-radius: 2rem;
   transition: 0.5s;
 }
 
-.project-tile:hover {
-  transform: scale(1.1);
+.project-tile img:hover {
+  transform: scale(1.08);
 }
 
 .project-tile img {
-  width: 100%;
-  height: 6em;
+  width: 75%;
+  border-radius: 2em;
+  transition: 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-tile .container .project-title {
-  font-size: 1em;
   margin: 0.5em;
+  font-size: 2.1rem;
 }
 
 #contact {
@@ -136,43 +156,46 @@ a {
 }
 
 #contact .icons img {
-  transition: 0.5s;
+  transition: 0.5s ease;
 }
 
 #contact .icons img:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .icons a img {
-  width: 3em;
+  width: 4.2em;
+  margin: 0 1.5rem 0 1.5rem;
 }
 
 /* ------------------------------------------------ */
 /* movein animation */
 #skills {
-  display: flex;
-  justify-content: space-evenly;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   align-items: center;
   overflow: hidden;
+  gap: 2rem;
 }
 
 .pl-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ffd700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0.3rem 0.5rem 0.2rem #ffd900b4;
   border-radius: 10%;
-  padding: 0.5em;
-  width: 10em;
-  transform: translateX(800%);
+  padding: 1rem;
+  width: 50%;
+  transform: translateX(700%);
 }
 
 .moveinout {
-  animation: moveInOut 10s linear infinite;
+  animation: moveInOut 15s linear infinite;
 }
 
 .pl-logo {
-  width: 3em;
+  width: 55%;
 }
 
 .pl-text {
@@ -248,7 +271,7 @@ a {
 
 .intro-text {
   color: #ffd700;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   line-height: 3em;
 }
 
@@ -271,683 +294,153 @@ a {
 /* ---------------------------------------------- */
 
 /* MQ */
-@media (max-width: 400px) {
-  .logo-img {
-    width: 6.5rem;
-    height: 3.1rem;
-  }
-
+@media (min-width: 320px) and (max-width: 425px) {
   #navbar {
+    position: absolute;
     display: none;
   }
 
-  #welcome-section h1 {
-    font-size: 3em;
-  }
-
-  .intro-text {
-    font-size: 2.5rem; /*for animation*/
-    line-height: 3em;
+  #logo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
   }
 
   #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
+    gap: 1rem;
   }
+
   .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.1em;
-    width: 15;
-    height: 12em;
-    border-radius: 1em;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    height: 95%;
   }
+
   .project-tile img {
-    width: 100%;
-    height: 5em;
+    border-radius: 1rem;
   }
 
   .project-tile .container .project-title {
-    font-size: 1em;
+    margin: 0 0.95rem 0.95rem 1rem;
+    font-size: 1.3rem;
   }
 
   .pl-container {
-    width: 9em;
+    width: 90%;
+    height: 90%;
+  }
+
+  .pl-logo {
+    width: 60%;
+  }
+
+  .pl-text {
+    font-size: 1.3rem;
+  }
+
+  #welcome-section .welc-content {
+    margin: 2rem;
   }
 }
 
-@media (min-width: 401px) and (max-width: 499px) {
-  .logo-img {
-    width: 6.5rem;
-    height: 3.1rem;
-  }
-
+@media (min-width: 426px) and (max-width: 767px) {
   #navbar {
+    position: absolute;
     display: none;
   }
 
-  #welcome-section h1 {
-    font-size: 3em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 1.9em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 1.6em;
-    line-height: 1em;
-  }
-
-  .intro-text {
-    font-size: 2.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.1em;
+  #logo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
   }
 
   #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
+    gap: 1rem;
   }
+
   .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.1em;
-    width: 18em;
-    height: 14em;
-    border-radius: 1em;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    height: 95%;
   }
+
   .project-tile img {
-    width: 100%;
-    height: 7em;
+    border-radius: 1rem;
   }
 
   .project-tile .container .project-title {
-    font-size: 1.2em;
+    margin: 0 0.95rem 0.95rem 1rem;
+    font-size: 1.3rem;
   }
 
-  .project-tile .container p {
-    font-size: 1em;
+  .pl-container {
+    width: 90%;
+    height: 95%;
   }
 
-  #contact .icons a img {
-    width: 4.5em;
+  .pl-logo {
+    width: 60%;
+  }
+
+  .pl-text {
+    font-size: 1.3rem;
+  }
+
+  #welcome-section .welc-content {
+    margin: 2rem;
   }
 }
 
-@media (min-width: 500px) and (max-width: 599px) {
-  .logo-img {
-    width: 6.5rem;
-    height: 3.1rem;
-  }
-
+@media (min-width: 768px) and (max-width: 1023px) {
   #navbar {
+    position: absolute;
     display: none;
   }
 
-  #welcome-section h1 {
-    font-size: 3em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 2em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 1.6em;
-  }
-
-  .intro-text {
-    font-size: 2.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.1em;
+  #logo {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
   }
 
   #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
+    gap: 1rem;
   }
+
   .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.1em;
-    width: 20em;
-    height: 16em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 8em;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 1rem;
   }
 
   .project-tile .container .project-title {
-    font-size: 1.2em;
+    margin: 0 0.95rem 0.95rem 1rem;
+    font-size: 2rem;
   }
 
-  .project-tile .container p {
-    font-size: 0.7em;
+  .pl-container {
+    width: 90%;
   }
 
-  #contact .icons a img {
-    width: 4.5em;
+  .pl-logo {
+    width: 55%;
   }
-}
 
-@media (min-width: 600px) and (max-width: 699px) {
-  .logo-img {
-    width: 6.5rem;
-    height: 3.1rem;
+  .pl-text {
+    font-size: 1.5rem;
+  }
+
+  #welcome-section .welc-content {
+    margin: 2rem;
   }
 
   #welcome-section h1 {
-    font-size: 4em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 2.2em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 1.85em;
-    line-height: 1.5em;
-  }
-
-  .intro-text {
-    font-size: 2.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.1em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.1em;
-    width: 24em;
-    height: 18em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 10em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 1.55em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.15em;
-  }
-
-  #contact .icons a img {
-    width: 4.5em;
-  }
-
-  #navbar ul a li {
-    font-size: 1.6em;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 799px) {
-  .logo-img {
-    width: 6.7rem;
-    height: 3.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 4em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 2.2em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 1.85em;
-    line-height: 1.5em;
-  }
-
-  .intro-text {
-    font-size: 2.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.1em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.1em;
-    width: 24em;
-    height: 18em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 10em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 1.7em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.2em;
-  }
-
-  #contact .icons a img {
-    width: 4.5em;
-  }
-
-  #navbar ul a li {
-    font-size: 1.6em;
-  }
-
-  #skills .pl-container {
-    width: 12.5em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 3.5em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 1.5em;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1023px) {
-  .logo-img {
-    width: 6.7rem;
-    height: 3.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 5.5em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 3em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 1.95em;
-    line-height: 1.6em;
-  }
-
-  .intro-text {
-    font-size: 3rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.3em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.2em;
-    width: 28em;
-    height: 22em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 13em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 2em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.3em;
-  }
-
-  #contact .icons a img {
-    width: 6em;
-  }
-
-  #navbar ul a li {
-    font-size: 1.8em;
-  }
-
-  #skills .pl-container {
-    width: 16em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 5.5em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 1.8em;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1280px) {
-  .logo-img {
-    width: 6.7rem;
-    height: 3.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 5.5em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 3em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 2.1em;
-    line-height: 1.6em;
-  }
-
-  .intro-text {
-    font-size: 3.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.6em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.2em;
-    width: 38em;
-    height: 28em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 17em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 2.5em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.5em;
-  }
-
-  #contact .icons a img {
-    width: 8em;
-  }
-
-  #navbar ul a li {
-    font-size: 2.2em;
-  }
-
-  #skills .pl-container {
-    width: 18em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 6em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1281px) and (max-width: 1439px) {
-  .logo-img {
-    width: 6.7rem;
-    height: 3.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 5.5em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 3em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 2.1em;
-    line-height: 1.6em;
-  }
-
-  .intro-text {
-    font-size: 3.8rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 2.6em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 0.5em;
-    line-height: 1.2em;
-    width: 38em;
-    height: 28em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 17em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 2.5em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.5em;
-  }
-
-  #contact .icons a img {
-    width: 8em;
-  }
-
-  #navbar ul a li {
-    font-size: 2.2em;
-  }
-
-  #skills .pl-container {
-    width: 18em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 6em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1440px) and (max-width: 1550px) {
-  .logo-img {
-    width: 8.7rem;
-    height: 5.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 6.5em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 3.5em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 2.3em;
-    line-height: 1.8em;
-  }
-
-  .intro-text {
-    font-size: 4rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 3em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2.5em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 1em;
-    line-height: 1.2em;
-    width: 42.5em;
-    height: 32em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 19em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 2.8em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 1.8em;
-  }
-
-  #contact .icons a img {
-    width: 8em;
-  }
-
-  #navbar ul a li {
-    font-size: 2.5em;
-  }
-
-  #skills .pl-container {
-    width: 22em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 7.5em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 2.2em;
-  }
-}
-
-@media (min-width: 1551px) {
-  .logo-img {
-    width: 10.7rem;
-    height: 7.3rem;
-  }
-
-  #welcome-section h1 {
-    font-size: 7em;
-    margin-top: 1em;
-  }
-
-  #welcome-section .welc-content h2 {
-    font-size: 4em;
-  }
-
-  #welcome-section .welc-content .welc-desc {
-    font-size: 2.6em;
-    line-height: 1.8em;
-  }
-
-  .intro-text {
-    font-size: 5rem; /*for animation*/
-    line-height: 3em;
-  }
-
-  .section-title {
-    font-size: 3.7em;
-  }
-
-  #projects {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2.5em;
-  }
-  .project-tile {
-    margin: 1em;
-    padding: 1em;
-    line-height: 1.2em;
-    width: 46.5em;
-    height: 34em;
-    border-radius: 1em;
-  }
-  .project-tile img {
-    width: 100%;
-    height: 20em;
-  }
-
-  .project-tile .container .project-title {
-    font-size: 3em;
-    line-height: 1em;
-  }
-
-  .project-tile .container p {
-    font-size: 2em;
-  }
-
-  #contact .icons a img {
-    width: 9em;
-  }
-
-  #navbar ul a li {
-    font-size: 2.8em;
-  }
-
-  #skills .pl-container {
-    width: 28em;
-  }
-
-  #skills .pl-container .pl-logo {
-    width: 8em;
-  }
-
-  #skills .pl-container .pl-text {
-    font-size: 2.5em;
+    font-size: 3rem;
   }
 }
